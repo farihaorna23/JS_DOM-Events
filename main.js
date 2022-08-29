@@ -69,12 +69,21 @@ let list = [
 ];
 
 // TODO: Create an unordered list element
+let unorderedList = document.createElement("ul");
 
 // TODO: Iterate over the array values, and create a list item element for each
 
 // TODO: Append the new list items to the unordered list element
 
+for (let i = 0; i < list.length; i++) {
+  let createList = document.createElement("li");
+  createList.textContent = list[i];
+  createList.style = "list-style:none";
+  unorderedList.appendChild(createList);
+}
+
 // TODO: Append the unordered list to the `div#container` under exercise 4
+document.getElementById("container").appendChild(unorderedList);
 
 /*----------- Exercise #5: DOM EVENTS --------------*/
 
