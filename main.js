@@ -42,8 +42,15 @@ document.getElementById("parent").insertBefore(newA, newParagraph);
 /*----------- Exercise #3: REMOVING/REPLACING ELEMENTS/OBJECTS -----------*/
 
 // TODO: Replace the "Child Node" with a new <p> element that reads "New Child Node"
+let newChild = document.createElement("p");
+newChild.textContent = "New Child Node";
+let prevChildNode = document.getElementById("N1");
+document
+  .getElementById("exercise-container3")
+  .replaceChild(newChild, prevChildNode);
 
 // TODO: Remove the "New Child Node"
+document.getElementById("exercise-container3").removeChild(newChild);
 
 /*----------- Exercise #4: LIST ITEMS ----------- */
 // Use the following array of values to generate a list on the DOM
