@@ -2,10 +2,22 @@ console.log("Script attached");
 /*----------- Exercise #1: SELECTING/MANIPULATING ELEMENTS -----------*/
 
 // Select Node #1 and change the text to: "I used the getElementById("node1") method to access this"
-
+document.getElementById("node1").textContent =
+  'O ised the getElementById("node1") method to access this';
 // Select Node #2 and change the text to: "I used the getElementByClassName("node2") method to access this" */
 
+//console.log(document.getElementsByClassName("node2"));
+document.getElementsByClassName("node2")[0].textContent =
+  'I used the getElementByClassName("node2") method to access this';
+
 // Select ALL the h3 tags and change the text to: "I used the getElementByTagName("h3") method to access all of these" */
+let tagH = document.getElementsByTagName("h3");
+console.log(tagH.length);
+
+for (let i = 0; i < tagH.length; i++) {
+  tagH[i].textContent =
+    'I used the getElementByTag("h3") method to access all of these';
+}
 
 /*----------- Exercise #2: CREATING/APPENDING/INSERTING ELEMENTS/OBJECTS -----------*/
 
@@ -28,8 +40,18 @@ console.log("Script attached");
 /*----------- Exercise #4: LIST ITEMS ----------- */
 // Use the following array of values to generate a list on the DOM
 
-let list = [ "apples", "bananas", "carrots", "dragon fruit", "eggplant", "fish", "grapes", "honey", "ice bag", "juice (any kind)" ];
-
+let list = [
+  "apples",
+  "bananas",
+  "carrots",
+  "dragon fruit",
+  "eggplant",
+  "fish",
+  "grapes",
+  "honey",
+  "ice bag",
+  "juice (any kind)"
+];
 
 // TODO: Create an unordered list element
 
@@ -37,7 +59,7 @@ let list = [ "apples", "bananas", "carrots", "dragon fruit", "eggplant", "fish",
 
 // TODO: Append the new list items to the unordered list element
 
-// TODO: Append the unordered list to the `div#container` under exercise 4 
+// TODO: Append the unordered list to the `div#container` under exercise 4
 
 /*----------- Exercise #5: DOM EVENTS --------------*/
 
