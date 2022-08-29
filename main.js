@@ -88,6 +88,28 @@ document.getElementById("container").appendChild(unorderedList);
 /*----------- Exercise #5: DOM EVENTS --------------*/
 
 // TODO: write a function called "show" which creates a new div with an alerting message to the user with this message
+
+document.getElementById("btn").addEventListener("click", () => {
+  let modalContainer = document.createElement("div");
+  let modalContent = document.createElement("div");
+  let content = document.createElement("p");
+  let closebtn = document.createElement("button");
+
+  content.textContent =
+    "Clicking the button triggers the onclick event, which calls the JS function show()... which alerts the user";
+
+  closebtn.textContent = "Close Button";
+  modalContainer.id = "modal";
+  modalContent.classList.add("modal-card");
+  modalContent.append(content, closebtn);
+  modalContainer.appendChild(modalContent);
+  document.body.appendChild(modalContainer);
+
+  closebtn.addEventListener("click", () => {
+    modalContainer.remove();
+  });
+});
+
 // -> "Clicking the button triggers the onclick event, which calls the JS function show()... which alerts the user"
 // This div should be a 'modal' that covers the main content on the screen
 // BONUS: The modal popup should be able to be closed. Refactor for this functionality
